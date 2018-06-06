@@ -36,6 +36,5 @@ function getGifs(path, term){
 // call function and or addEventListener
 searchForm.addEventListener('submit', function(event){
     event.preventDefault()
-    results.innerHTML = ''
     getGifs('search', searchInput.value)
 })

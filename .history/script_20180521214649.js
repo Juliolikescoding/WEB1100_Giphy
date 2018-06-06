@@ -20,7 +20,7 @@ function getGifs(path, term){
             console.log(data)
             for(var i=0; i<data.data.length; i++){
                 results.innerHTML +=`
-                <img class="image" src="${data.data[i].images.preview_gif.url}">
+                <images class="image" src="${data.data[i].images.preview_gif.url}">
                 `
             }
         },
@@ -36,6 +36,5 @@ function getGifs(path, term){
 // call function and or addEventListener
 searchForm.addEventListener('submit', function(event){
     event.preventDefault()
-    results.innerHTML = ''
     getGifs('search', searchInput.value)
 })

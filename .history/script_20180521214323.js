@@ -3,7 +3,7 @@
 var giphy_endpoint = 'http://api.giphy.com/v1'
 var API_KEY = 'WGReRU5nj1TIWduFeSqO3hGyK87MNsVI'
 var searchForm = document.querySelector('#search-form')
-var searchInput = searchForm.querySelector('input')
+var searchInput = searchForm.querySelector ('input')
 var results = document.querySelector(".results")
 
 
@@ -19,8 +19,8 @@ function getGifs(path, term){
         success: function(data){
             console.log(data)
             for(var i=0; i<data.data.length; i++){
-                results.innerHTML +=`
-                <img class="image" src="${data.data[i].images.preview_gif.url}">
+                result.innerHTML +=`
+                <images class="image" src="${data.data[i].images.preview_gif.url}">
                 `
             }
         },
@@ -36,6 +36,5 @@ function getGifs(path, term){
 // call function and or addEventListener
 searchForm.addEventListener('submit', function(event){
     event.preventDefault()
-    results.innerHTML = ''
     getGifs('search', searchInput.value)
 })

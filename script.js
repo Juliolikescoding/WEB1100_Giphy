@@ -13,7 +13,7 @@ var results = document.querySelector(".results")
 function getGifs(path, term){
 
     $.ajax({
-        url:`${giphy_endpoint}/gifs/${path}?api_key=${API_KEY}&q=${term}`,
+        url:`${giphy_endpoint}/gifs/${path}?api_key=${API_KEY}&q=${term}&limit=500&offset=6&rating=G`,
         type:"GET",
         dataType: "json",
         success: function(data){
@@ -21,6 +21,7 @@ function getGifs(path, term){
             for(var i=0; i<data.data.length; i++){
                 results.innerHTML +=`
                 <img class="image" src="${data.data[i].images.preview_gif.url}">
+                
                 `
             }
         },
